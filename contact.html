@@ -10,9 +10,9 @@
 <body>
     <header>
         <div class="logo__container">
-            <a href="index.html"><img src="images/" class="logo" alt="Blog logo"/></a>
+            <a href="index.html"><img src="images/ByWay-logo.png" class="logo" alt="Blog logo"/></a>
         </div>
-        <nav>
+        <nav class="header__nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -22,24 +22,56 @@
         </nav>
     </header>
     <main>
-        <section class="intro">
-            <h1>
-                A blog about moving through landscapes
-            </h1>
-            <h2>Etiam lobortis mauris quis eleifend commodo. Mauris porta tristique enim, id molestie ex lobortis quis. Vestibulum id tincidunt mi. Maecenas ac tellus leo. Aenean eget ligula ac nisi sagittis malesuada.</h2>
-            <a class="button__red">Read our stories</a>
+        <section class="contact-form">
+        <div class="sign-up__text">
+            <h1>Contact us</h1>
+            <p>Have questions or thoughts? Send us a message, and we will contact you as soon as possible.</p>
+        </div>
+        <div>
+            <label>Your e-mail</label>
+            <p class="form-comment">Required</p><input id="email" name="email" type="email">
+            <div class="form-error" id="emailError">
+                Please enter a valid email-address.
+            </div>
+        </div>
+        <div>
+            <label>Your password</label>
+            <p class="form-comment">Minimum 8 characters, at least one upper case letter and one number.</p><input id="password" name="password" type="password">
+            <div class="form-error" id="passwordError">
+                Please enter a valid password.
+            </div>
+        </div>
+        <div>
+            <label>Re-enter your password</label> <input id="password__reenter" name="password" type="password">
+            <div class="form-error" id="password__reenter-error">
+                Please re-enter a matching password.
+            </div>
+        </div>
+        <div class="sign-up__checkbox">
+            <input id="recommendations" name="recommendations" type="checkbox" value="recommendations"><label for="recommendations">Please send me news and recommendations via email.</label>
+        </div>
+        <div class="sign-up__checkbox">
+            <input id="terms" name="terms" type="checkbox" value="terms"><label for="terms">I agree to the <a class="sign-up__terms" href="#">terms of use</a>.</label>
+            <p class="form-comment">Required</p>
+            <div class="form-error" id="termsError">
+                Please agree to the terms of use.
+            </div>
+        </div><button class="submit-2">Sign up now</button> 
         </section>
-        <section class="image__carousel"></section>
-    </main>
-    <footer>
-        <nav class="nav__footer">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="stories.html">Stories</a></li>
-                <li><a href="contact.html" class="active__footer">Contact</a></li>
-            </ul>
-        </nav>
-    </footer>
+        </main>
+        <footer>
+            <nav class="nav__footer">
+                <ul>
+                    <li><a href="index.html" class="active__footer">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="write-for-us">
+            <p class="footer__p">Want to write for us?</p>
+            <p class="footer__p2">Send your ideas to hi@byway.com</p>
+            </div>
+        </footer>
 </body>
 </html>

@@ -10,9 +10,9 @@
 <body id="body__stories">
     <header>
         <div class="logo__container">
-            <a href="index.html"><img src="images/" class="logo" alt="Blog logo"/></a>
+            <a href="index.html"><img src="images/ByWay-logo-negative.png" class="logo" alt="Blog logo"/></a>
         </div>
-        <nav>
+        <nav class="header__nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -22,24 +22,28 @@
         </nav>
     </header>
     <main>
-        <section class="intro">
-            <h1>
-                A blog about moving through landscapes
-            </h1>
-            <h2>Etiam lobortis mauris quis eleifend commodo. Mauris porta tristique enim, id molestie ex lobortis quis. Vestibulum id tincidunt mi. Maecenas ac tellus leo. Aenean eget ligula ac nisi sagittis malesuada.</h2>
-            <a class="button__red">Read our stories</a>
+        <section class="stories__page">
+            <h1>Our stories</h1>
+            <div class="post">
+                <div class="loader"></div>
+            </div>
         </section>
-        <section class="image__carousel"></section>
     </main>
     <footer>
-        <nav class="nav__footer">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="stories.html" class="active__footer">Stories</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </footer>
+        <footer>
+            <nav class="nav__footer">
+                <ul>
+                    <li><a href="index.html" class="active__footer">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="stories.html">Stories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="write-for-us">
+            <p class="footer__p">Want to write for us?</p>
+            <p class="footer__p2">Send your ideas to hi@byway.com</p>
+            </div>
+        </footer>
+    <script src="js/postsAPI.js"></script> 
 </body>
 </html>
