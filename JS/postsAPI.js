@@ -16,8 +16,8 @@ async function getPosts() {
             const titleContainer = data[i].title.rendered;
             const imageContainer = data[i]._embedded["wp:featuredmedia"][0].source_url;
 
-            if (i === 10) {
-                break;
+            if (i === 9) {
+              break;
             }
 
             postContainer.innerHTML +=
