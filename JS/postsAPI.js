@@ -2,6 +2,7 @@
 const postUrl = "https://mageknip.no/wp-json/wp/v2/posts?_embed";
 
 const postContainer = document.querySelector(".post");
+const loadMore = document.querySelector(".load-more");
 
 async function getPosts() {
 
@@ -21,7 +22,7 @@ async function getPosts() {
             }
 
             postContainer.innerHTML +=
-                `<a href="#">
+                `<a href="story.html?/wp/v2/posts?_embed/id=${data[i].id}">
                 <div class="post__card">
                 <img src="${imageContainer}" alt="${titleContainer}" class="featured__image"/>
 			    <h2 class="title">${titleContainer}</h2>

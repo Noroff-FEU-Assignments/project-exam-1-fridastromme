@@ -217,6 +217,10 @@ footer {
 	grid-gap: 1rem;
 }
 
+.post__card {
+	height: 96%;
+}
+
 .loader {
 	border: 6px solid #e7ebec;
 	border-top: 6px solid #264e54;
@@ -251,8 +255,31 @@ footer {
 	color: #e7ebec;
 }
 
+#body__stories a:hover {
+	color: #f7a271;
+}
+
 #body__stories footer {
 	background-color: #2c6068;
+}
+
+.title {
+	margin-left: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+.previous,
+.next {
+	cursor: pointer;
+	margin-top: 1rem;
+}
+
+.previous {
+	float: left;
+}
+
+.next {
+	float: right;
 }
 
 /* About */
@@ -281,4 +308,76 @@ footer {
 	color: #e7ebec;
 	margin-left: 1rem;
 	font-size: 2rem;
+}
+
+/* Contact page */
+
+.contact-form {
+	width: 40%;
+	margin: auto;
+	padding-bottom: 4rem;
+}
+
+.form-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: 'form-field';
+	grid-gap: 2rem;
+}
+
+label {
+	font-family: 'chivo light';
+	font-size: 1.5rem;
+}
+
+input,
+textarea {
+	border: 1px solid #264e54;
+}
+
+#firstName,
+#email {
+	width: 80%;
+	height: 1.3rem;
+}
+
+#subject {
+	width: 40%;
+	height: 1.3rem;
+}
+
+#message {
+	width: 40%;
+	height: 6rem;
+}
+
+button {
+	color: #fff;
+	font-weight: bold;
+	background-color: #264e54;
+	padding: 0.9rem 1.2rem 1rem 1.2rem;
+	border: none;
+	margin-top: 2rem;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: #3f686e;
+}
+
+.form-field {
+	margin-top: 1.5rem;
+}
+
+.form-comment {
+	font-family: 'montserrat italic';
+	font-size: 0.9rem;
+	margin-top: 0;
+}
+
+.form-error {
+	display: none;
+	font-family: montserrat;
+	color: #e05200;
+	margin-top: 0.5rem;
 }
