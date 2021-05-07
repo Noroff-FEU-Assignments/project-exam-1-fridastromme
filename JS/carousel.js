@@ -10,7 +10,7 @@ async function getCarousel() {
 
     try {
         const response = await fetch(carouselUrl);
-        let image = await response.json();
+        const image = await response.json();
         console.log(image);
 
         carouselContainer.innerHTML = "";
@@ -23,34 +23,37 @@ async function getCarousel() {
             break;
             }
 
+            let allImages = Array.from(image);
+
             function nextImage() {
+
                 i = i + 1;
-                i = i % image.length;
-                return image[i]
+                i = i % allImages.length;
+                return allImages[i]
             }
 
-            function prevItem() {
+            function prevImage() {
                 if (i === 0) {
-                    i = image.length;
+                    i = allImages.length;
                 }
                 i = i - 1;
-                return image[i];
+                return allImages[i];
             }
 
             prev.addEventListener("click", function (event) {
-                image = nextItem();
+                allImages = nextImage();
             })
 
             next.addEventListener("click", function (event) {
-                image = prevItem();
+                allImages = prevImage();
             })
 
 
             carouselContainer.innerHTML +=
-                `<li href="story.html?id=${image[i].id}" class="carousel__slide-list">
+                `<div href="story.html?id=${image[i].id}" class="carousel__slide-list">
                 <div class="carousel__title"><h2 class="carousel__title">${imageTitle}<h2></div>
                 <img src="${carouselImage}" alt="${imageTitle}" class="carousel__image"/>
-                </li>`;
+                </div>`;
         }
 
     } catch (error) {
