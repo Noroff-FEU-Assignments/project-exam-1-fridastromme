@@ -5,30 +5,37 @@ const params = new URLSearchParams(queryString);
 const id = params.get("id");
 console.log(id);
 
-const fetchUrl = "https://mageknip.no/wp-json/wp/v2/posts?_embed/" + id;
+if (id === null) {
+    location.href = "/";
+}
+
+const url = "https://mageknip.no/wp-json/wp/v2/posts/" + id + "?_embed";
 
 async function fetchStory() {
 
     try {
 
-        const response = await fetch(fetchUrl);
+        const response = await fetch(url);
         const details = await response.json();
 
         console.log(details);
 
-        storyContainer.innerHTML =
-            `<img src="${details.images[0].src}" alt="${details.name}"/ class="details-image">
-            <div class="details-text">
-            <h1 class="details-title">${details.name}</h1>
-            <h2 class="details-name">${details.short_description}</h2>
-            <p class="details-description">${details.description}</p>
-            <h3 class="details-price">Price: $${details.prices.price}
-            </div>`;
+        const featuredImage = details._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+        const storyContent = details.content.renderes.match(/\<p>.*?<\/p>|https.*?\.jpg/g);
+    
+            storyContainer.innerHTML =
+                `
+                <div class="story-content"><img src="${featuredImage}" alt="${details.title}"/>
+                <h1>${details.title.rendered}</h1>
+                <h2>${details.modified}</h2>
+                <p>${storyContent[0]}</p>
+                <p>${storyContent[1]}</p>
+                </div>`;
 
     } catch (error) {
-        console.log("Something went wrong when calling the API.")
-        storyContainer.innerHTML = `<h1>The story you're looking for doesn't exist.</h1>`;
+        console.log("Something went wrong when calling the API.");
     }
+
 }
 
 fetchStory();
