@@ -23,7 +23,7 @@ async function getCarousel() {
             break;
             }
 
-            let allImages = Array.from(image);
+            var allImages = Array.from(image);
 
             function nextImage() {
 

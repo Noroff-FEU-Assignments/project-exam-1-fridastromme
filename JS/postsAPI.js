@@ -1,5 +1,5 @@
 // Get stories from Wordpress:
-const postUrl = "https://mageknip.no/wp-json/wp/v2/posts?_embed";
+const postUrl = "https://mageknip.no/wp-json/wp/v2/posts?per_page=100&_embed";
 
 const postContainer = document.querySelector(".post");
 const loadMore = document.querySelector(".load-more");
@@ -16,10 +16,10 @@ async function getPosts() {
         for (let i = 0; i < data.length; i++) {
             const titleContainer = data[i].title.rendered;
             const imageContainer = data[i]._embedded["wp:featuredmedia"][0].source_url;
-
-            if (i === 9) {
-              break;
-            }
+            
+            //if (i === 9) {
+            //  break;
+            //}
 
             postContainer.innerHTML +=
                 `<a href="story.html?id=${data[i].id}">
