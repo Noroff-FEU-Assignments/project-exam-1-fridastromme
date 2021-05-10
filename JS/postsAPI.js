@@ -1,13 +1,20 @@
 // Get stories from Wordpress:
-const postUrl = "https://mageknip.no/wp-json/wp/v2/posts?per_page=100&_embed";
+const postUrl = "https://mageknip.no/wp-json/wp/v2/";
 
 const postContainer = document.querySelector(".post");
+
+let length = 10;
+let offset = 0;
+
+const goBack = document.querySelector(".go-back");
 const loadMore = document.querySelector(".load-more");
 
 async function getPosts() {
 
     try {
-        const response = await fetch(postUrl);
+
+
+        const response = await fetch(postUrl + `posts?per_page=${length}&offset=${offset}&_embed`);
         const data = await response.json();
         console.log(data);
 
@@ -16,10 +23,6 @@ async function getPosts() {
         for (let i = 0; i < data.length; i++) {
             const titleContainer = data[i].title.rendered;
             const imageContainer = data[i]._embedded["wp:featuredmedia"][0].source_url;
-            
-            //if (i === 9) {
-            //  break;
-            //}
 
             postContainer.innerHTML +=
                 `<a href="story.html?id=${data[i].id}">
@@ -30,6 +33,29 @@ async function getPosts() {
 		        </div>
                 </a>`;
         }
+
+        if (offset === 0) {
+            goBack.style.display = "none";
+        } else {
+            goBack.style.display = "block";
+        }
+        if (data.length < 1) {
+            loadMore.style.display = "none";
+        } else {
+            loadMore.style.display = "block";
+        }
+        
+        goBack.addEventListener("click", () => {
+            if (offset >= 10) {
+                offset -= 10;
+            }
+            getPosts(postUrl);
+        });
+        
+        loadMore.addEventListener("click", () => {
+            offset += 10;
+            getPosts(postUrl);
+        });
 
     } catch (error) {
         console.log("Something went wrong when calling the API.")

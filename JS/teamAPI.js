@@ -21,13 +21,11 @@ async function getTeam() {
             }
 
             teamContainer.innerHTML +=
-                `<a href="purchase-movie.html?id=${data[i].id}">
-                <div class="team-card">
+                `<div class="team-card">
                 <img src="${imageContainer}" alt="${nameContainer}" class="team-image"/>
 			    <h3 class="name">${nameContainer}</h3>
                 </div>
-		        </div>
-                </a>`;
+		        </div>`;
         }
 
     } catch (error) {

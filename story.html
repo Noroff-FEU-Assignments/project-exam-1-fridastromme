@@ -7,7 +7,7 @@
     <link href="CSS/styles.css" rel="stylesheet" />
     <title>Read this story</title>
 </head>
-<body>
+<body id="story">
     <header>
         <div class="logo__container">
             <a href="index.html"><img src="images/ByWay-logo.png" class="logo" alt="Blog logo"/></a>
@@ -22,7 +22,14 @@
         </nav>
     </header>
     <main>
-        <div class="story"></div>
+        <div class="modal">
+            <span class="close"><img src="images/close-button.png"/></span>
+            <img class="modal__image"/>
+        </div>
+        <div class="story__image">
+        </div>
+        <div class="story">
+        </div>
     </main>
     <footer>
         <nav class="nav__footer">
@@ -38,6 +45,7 @@
         <p class="footer__p2">Send your ideas to hi@byway.com</p>
         </div>
     </footer>
-    <script src="js/details.js"></script> 
+    <script src="js/details.js"></script>
+    <script src="js/modal.js"></script> 
 </body>
 </html>

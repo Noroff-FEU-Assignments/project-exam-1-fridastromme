@@ -1,65 +1,68 @@
-const carousel = document.querySelector (".carousel");
-const slider = document.querySelector(".carousel__slide");
-const carouselUrl = "https://mageknip.no/wp-json/wp/v2/posts?_embed";
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+const carouselUrl = "https://mageknip.no/wp-json/wp/v2/";
+const carouselContainer = document.querySelector(".carousel-container");
 
-const carouselContainer = document.querySelector(".carousel__slide-container");
+let length = 1;
+let offset = 0;
 
-async function getCarousel() {
+const buttonPrevious = document.querySelector("#prev");
+const buttonNext = document.querySelector("#next");
+
+async function fetchApi(url) {
 
     try {
-        const response = await fetch(carouselUrl);
-        const image = await response.json();
-        console.log(image);
+        const response = await fetch(url + `posts?per_page=${length}&offset=${offset}&_embed`);
+        const carouselData = await response.json();
 
-        carouselContainer.innerHTML = "";
+        console.log(carouselData);
 
-        for (let i = 0; i < image.length; i++) {
-            const imageTitle = image[i].title.rendered;
-            const carouselImage = image[i]._embedded["wp:featuredmedia"][0].source_url;
+                function showHTML() {
 
-            if (i == 1) {
-            break;
-            }
-
-            var allImages = Array.from(image);
-
-            function nextImage() {
-
-                i = i + 1;
-                i = i % allImages.length;
-                return allImages[i]
-            }
-
-            function prevImage() {
-                if (i === 0) {
-                    i = allImages.length;
-                }
-                i = i - 1;
-                return allImages[i];
-            }
-
-            prev.addEventListener("click", function (event) {
-                allImages = nextImage();
-            })
-
-            next.addEventListener("click", function (event) {
-                allImages = prevImage();
-            })
-
-
-            carouselContainer.innerHTML +=
-                `<div href="story.html?id=${image[i].id}" class="carousel__slide-list">
-                <div class="carousel__title"><h2 class="carousel__title">${imageTitle}<h2></div>
+                const imageTitle = carouselData[0].title.rendered;
+                const carouselImage = carouselData[0]._embedded["wp:featuredmedia"][0].source_url;
+        
+                carouselContainer.innerHTML +=
+                `<div class="carousel__slider">
+                <a href="story.html?id=${carouselData[0].id}" class="carousel__slider">
+                <div class="carousel__title">
+                <h2 class="carousel__title">${imageTitle}<h2>
+                </div>
                 <img src="${carouselImage}" alt="${imageTitle}" class="carousel__image"/>
+                </a>
                 </div>`;
+
+                }
+
+                showHTML();
+
+        if (offset === 0) {
+            buttonPrevious.style.display = "none";
+        } else {
+            buttonPrevious.style.display = "block";
+        }
+        if (carouselData.length < 1) {
+            buttonNext.style.display = "none";
+        } else {
+            buttonNext.style.display = "block";
         }
 
+
     } catch (error) {
-        console.log("Something went wrong when calling the API.")
-        carouselContainer.innerHTML = `<h2 class="details-name">Sorry, something went wrong. Please try again later.</h2>`;
+        carouselContainer.innerHTML +=
+        `<h1>No stories found</h1>`
+        console.log("We couldn't load stories.");
     }
 }
 
-getCarousel()
+buttonPrevious.addEventListener("click", () => {
+    if (offset >= 1) {
+        offset -= 1;
+    }
+    fetchApi(carouselUrl);
+});
+
+buttonNext.addEventListener("click", () => {
+    offset += 1;
+    fetchApi(carouselUrl);
+});
+
+fetchApi(carouselUrl);

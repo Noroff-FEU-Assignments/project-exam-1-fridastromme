@@ -1,4 +1,5 @@
 const storyContainer = document.querySelector(".story");
+const storyImage = document.querySelector(".story__image");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
 
@@ -21,15 +22,20 @@ async function fetchStory() {
         console.log(details);
 
         const featuredImage = details._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-        const storyContent = details.content.rendered.match(/\<p>.*?<\/p>|https.*?\.jpg/g);
-    
-            storyContainer.innerHTML =
+        const modalImage = details._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+        const title = details.title
+        const storyContent = details.content.rendered;
+
+        storyImage.innerHTML =
+        `<img src="${featuredImage}" alt="${title}"/>`;
+        
+        storyContainer.innerHTML =
                 `<div class="story-content">
-                <img src="${featuredImage}" alt="${details.title}" class="story__image"/>
                 <h1 class="story__title">${details.title.rendered}</h1>
                 <h2>${details.modified}</h2>
                 <p>${storyContent}</p>
                 </div>`;
+
 
     } catch (error) {
         console.log("Something went wrong when calling the API.");
@@ -38,3 +44,6 @@ async function fetchStory() {
 }
 
 fetchStory();
+
+
+
