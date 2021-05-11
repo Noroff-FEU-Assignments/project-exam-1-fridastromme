@@ -98,7 +98,7 @@ nav li {
 }
 
 a {
-	font-family: 'montserrat regular' Verdana, Geneva, Tahoma, sans-serif;
+	font-family: 'montserrat regular', Verdana, Geneva, Tahoma, sans-serif;
 	color: #25283d;
 	text-decoration: none;
 }
@@ -160,7 +160,7 @@ h4 {
 }
 
 p {
-	font-family: 'montserrat regular' Verdana, Geneva, Tahoma, sans-serif;
+	font-family: 'montserrat regular', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 footer {
