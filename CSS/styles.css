@@ -671,5 +671,6 @@ textarea {
 
 	footer li {
 		margin-bottom: 0rem;
+		display: block;
 	}
 }
