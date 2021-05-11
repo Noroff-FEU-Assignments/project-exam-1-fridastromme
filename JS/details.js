@@ -38,6 +38,7 @@ async function fetchStory() {
 
     } catch (error) {
         console.log("Something went wrong when calling the API.");
+        storyContainer.innerHTML = `<h2 class="details-name">Sorry, we can't find the story. Please try again later.</h2>`;
     }
 
 }

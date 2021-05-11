@@ -40,7 +40,7 @@ async function getPosts() {
 
     } catch (error) {
         console.log("Something went wrong when calling the API.")
-        postContainer.innerHTML = `<h2 class="details-name">Sorry, something went wrong. Please try again later.</h2>`;
+        postContainer.innerHTML = `<h2 class="details-name">Sorry, we can't find the blog posts at the moment. Please try again later.</h2>`;
     }
 }
 

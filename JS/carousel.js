@@ -47,9 +47,8 @@ async function fetchApi(url) {
 
 
     } catch (error) {
-        carouselContainer.innerHTML +=
-        `<h1>No stories found</h1>`
-        console.log("We couldn't load stories.");
+        carouselContainer.innerHTML += `<h1>No stories found.</h1>`
+        console.log("Something went wrong when calling the API.");
     }
 }
 

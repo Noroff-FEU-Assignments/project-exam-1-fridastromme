@@ -30,7 +30,7 @@ async function getTeam() {
 
     } catch (error) {
         console.log("Something went wrong when calling the API.")
-        teamContainer.innerHTML = `<h1 class="details-name">Can't load titles. Please try again later.</h1>`;
+        teamContainer.innerHTML = `<h1 class="details-name">Can't load team members. Please try again later.</h1>`;
     }
 }
 
