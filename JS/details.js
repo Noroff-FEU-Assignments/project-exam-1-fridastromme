@@ -22,7 +22,6 @@ async function fetchStory() {
         console.log(details);
 
         const featuredImage = details._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-        const modalImage = details._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
         const title = details.title
         const storyContent = details.content.rendered;
 

@@ -150,6 +150,12 @@ h3 {
 	font-size: 1.2rem;
 }
 
+h4 {
+	font-family: 'montserrat bolditalic';
+	color: #25283d;
+	font-size: 1.2rem;
+}
+
 p {
 	font-family: 'montserrat regular';
 }
@@ -287,13 +293,16 @@ footer {
 	margin: 1% 5% 10% 5%;
 }
 
-.go-back,
 .load-more {
 	cursor: pointer;
 }
 
 .load-more {
 	text-align: right;
+}
+
+.load {
+	margin-top: 1rem;
 }
 
 .about,
@@ -377,14 +386,31 @@ footer {
 
 .story-content {
 	margin: auto;
-	width: 60%;
+	width: 50%;
 	margin-top: 2rem;
 	margin-bottom: 6rem;
 }
 
-.story__image {
-	text-align: center;
+.story-content h4 {
+	background-image: url('/images/quote-mark.png');
+	background-repeat: no-repeat;
+	background-size: 3%;
+	padding-left: 3rem;
+}
+
+.story-content img {
 	width: 100%;
+	height: auto;
+}
+
+.story__image {
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.story__image img {
+	text-align: center;
+	width: 50%;
 	overflow: hidden;
 }
 
@@ -593,12 +619,21 @@ textarea {
 		grid-template-columns: 1fr;
 	}
 
+	.story__image img {
+		width: 90%;
+	}
+
+	.story-content h4 {
+		background-size: 5%;
+	}
+
 	.story-content {
 		width: 90%;
 	}
 
 	.modal {
 		width: 100%;
+		left: 0;
 	}
 
 	.contact-form {
