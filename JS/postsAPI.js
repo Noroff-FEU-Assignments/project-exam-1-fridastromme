@@ -3,7 +3,7 @@ const postUrl = "https://mageknip.no/wp-json/wp/v2/";
 
 const postContainer = document.querySelector(".post");
 
-let perPage = 10;
+let perPage = 9;
 
 const loadMore = document.querySelector(".load-more");
 
@@ -34,7 +34,7 @@ async function getPosts() {
 
         
         loadMore.addEventListener("click", () => {
-            perPage += 10;
+            perPage += 9;
             getPosts(postUrl);
         });
 

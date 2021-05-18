@@ -1,5 +1,6 @@
 const modal = document.querySelector(".modal");
 const modalImg = document.querySelector(".modal__image");
+const content = document.querySelector(".content");
 const close = document.getElementsByClassName("close")[0];
 
 
@@ -14,7 +15,7 @@ async function openModal() {
 
 
 storyImage.onclick = function(){
-    modal.style.display = "block";
+    modal.style.display = "inline-block";
     modalImg.src = featuredImage;
 
 }
@@ -22,12 +23,13 @@ storyImage.onclick = function(){
 close.onclick = function() {
     modal.style.display = "none";
   }
-}
 
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
+
+content.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
+  }
 }
 
 openModal();

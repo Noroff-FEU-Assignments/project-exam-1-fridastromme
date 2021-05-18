@@ -60,7 +60,7 @@ body {
 
 header {
 	display: grid;
-	grid-template-columns: 0.5fr 0fr 1fr;
+	grid-template-columns: 0fr 0.5fr 0fr 1fr;
 	padding-right: 4rem;
 }
 
@@ -108,6 +108,24 @@ a:hover {
 	font-weight: bold;
 }
 
+.skip a {
+	font-weight: bold;
+	font-size: 1.2rem;
+	position: absolute;
+	margin-left: 1rem;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.skip a:focus {
+	position: static;
+	width: auto;
+	height: auto;
+}
+
 .frontpage {
 	display: grid;
 	grid-template-columns: 1.5fr 2fr;
@@ -119,7 +137,7 @@ a:hover {
 .button__red {
 	color: #fff;
 	font-weight: bold;
-	background-color: #e05200;
+	background-color: #cc3600;
 	padding: 0.9rem 1.2rem 1rem 1.2rem;
 	float: right;
 }
@@ -127,7 +145,7 @@ a:hover {
 .button__red:hover {
 	color: #fff !important;
 	font-weight: normal !important;
-	background-color: #f1600c;
+	background-color: #f14303;
 }
 
 h1 {
@@ -261,7 +279,7 @@ footer {
 	position: absolute;
 	top: 60%;
 	z-index: 100;
-	background: #e05200;
+	background: #cc3600;
 	border: transparent;
 	border-radius: 50%;
 	width: 3rem;
@@ -300,6 +318,8 @@ footer {
 
 .load-more {
 	cursor: pointer;
+	font-size: 1.5rem;
+	float: right;
 }
 
 .load-more {
@@ -429,11 +449,13 @@ footer {
 
 .modal {
 	display: none;
-	position: fixed;
+	position: absolute;
 	z-index: 100;
 	width: 65%;
 	left: 15%;
 	overflow: auto;
+	background-color: white;
+	padding: 2rem;
 }
 
 .modal__image {
@@ -444,7 +466,7 @@ footer {
 .close {
 	position: absolute;
 	left: 90%;
-	top: 2rem;
+	top: 2.7rem;
 	background-color: #e7ebec;
 	padding: 0.5rem;
 	border-radius: 50%;
@@ -453,6 +475,7 @@ footer {
 }
 
 .close:hover {
+	cursor: pointer;
 	background-color: #c9cfd1;
 }
 
@@ -561,7 +584,7 @@ textarea {
 
 @media only screen and (max-width: 700px) {
 	header {
-		grid-template-columns: 1fr 0.2fr;
+		grid-template-columns: 0fr 1fr 0.2fr;
 		padding-top: 2rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
@@ -639,7 +662,7 @@ textarea {
 	}
 
 	.modal {
-		width: 100%;
+		width: fit-content;
 		left: 0;
 	}
 
