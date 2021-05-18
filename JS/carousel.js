@@ -39,10 +39,10 @@ async function fetchApi(url) {
         } else {
             buttonPrevious.style.display = "block";
         }
-        if (carouselData.length < 1) {
-            buttonNext.style.display = "none";
-        } else {
+        if ((i++) === (carouselData.length)) {
             buttonNext.style.display = "block";
+        } else {
+            buttonNext.style.display = "none";
         }
 
 
