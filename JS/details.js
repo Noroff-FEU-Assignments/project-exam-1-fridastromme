@@ -2,6 +2,7 @@ const storyContainer = document.querySelector(".story");
 const storyImage = document.querySelector(".story__image");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
+const headTitle = document.getElementsByTagName("title")[0];
 
 const id = params.get("id");
 console.log(id);
@@ -24,6 +25,8 @@ async function fetchStory() {
         const featuredImage = details._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
         const title = details.title
         const storyContent = details.content.rendered;
+
+        headTitle.innerHTML = "ByWay | " + `${details.title.rendered}`;
 
         storyImage.innerHTML =
         `<img src="${featuredImage}" alt="${title}"/>`;
