@@ -39,7 +39,7 @@ async function fetchApi(url) {
         } else {
             buttonPrevious.style.display = "block";
         }
-        if (offset === 15) {
+        if (offset === 6) {
             buttonNext.style.display = "none";
         } else {
             buttonNext.style.display = "block";
