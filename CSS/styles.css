@@ -590,6 +590,29 @@ textarea {
 
 /* SMALLER SCREENS */
 
+@media only screen and (max-width: 800px) {
+	/* FRONT PAGE */
+
+	.frontpage {
+		grid-template-columns: 1fr;
+		grid-template-areas: 'intro' 'carousel__section';
+	}
+
+	.h1__frontpage {
+		font-size: 2.5rem;
+	}
+
+	/* Carousel on front page */
+
+	.carousel__container {
+		height: 30rem;
+	}
+
+	.carousel__title {
+		font-size: 1.5rem;
+	}
+}
+
 @media only screen and (max-width: 700px) {
 	/* GLOBAL */
 
@@ -651,27 +674,6 @@ textarea {
 	footer li {
 		margin-bottom: 0rem;
 		display: block;
-	}
-
-	/* FRONT PAGE */
-
-	.frontpage {
-		grid-template-columns: 1fr;
-		grid-template-areas: 'intro' 'carousel__section';
-	}
-
-	.h1__frontpage {
-		font-size: 2.5rem;
-	}
-
-	/* Carousel on front page */
-
-	.carousel__container {
-		height: 30rem;
-	}
-
-	.carousel__title {
-		font-size: 1.5rem;
 	}
 
 	/* ABOUT PAGE */
