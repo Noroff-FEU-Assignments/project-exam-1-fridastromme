@@ -60,7 +60,7 @@ body {
 
 header {
 	display: grid;
-	grid-template-columns: 0fr 0.5fr 0fr 1fr;
+	grid-template-columns: 0.5fr 0fr 1fr;
 	padding-right: 4rem;
 }
 
@@ -137,7 +137,7 @@ a:hover {
 .button__red {
 	color: #fff;
 	font-weight: bold;
-	background-color: #cc3600;
+	background-color: #a32c00;
 	padding: 0.9rem 1.2rem 1rem 1.2rem;
 	float: right;
 }
@@ -145,7 +145,7 @@ a:hover {
 .button__red:hover {
 	color: #fff !important;
 	font-weight: normal !important;
-	background-color: #f14303;
+	background-color: #c53500;
 }
 
 h1 {
@@ -235,6 +235,11 @@ footer {
 	position: relative;
 }
 
+#carousel__latest {
+	font-size: 1.3rem;
+	margin-bottom: 0.5rem;
+}
+
 .carousel-container {
 	position: relative;
 	width: 100%;
@@ -279,7 +284,7 @@ footer {
 	position: absolute;
 	top: 60%;
 	z-index: 100;
-	background: #cc3600;
+	background: #a32c00;
 	border: transparent;
 	border-radius: 50%;
 	width: 3rem;
@@ -584,7 +589,7 @@ textarea {
 
 @media only screen and (max-width: 700px) {
 	header {
-		grid-template-columns: 0fr 1fr 0.2fr;
+		grid-template-columns: 1fr 0.2fr;
 		padding-top: 2rem;
 		padding-left: 2rem;
 		padding-right: 2rem;
