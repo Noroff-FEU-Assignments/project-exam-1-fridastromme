@@ -1,4 +1,4 @@
-const contactForm = document.querySelector(".contact-form");
+const contactForm = document.querySelector(".contactform");
 const firstName = document.querySelector("#firstName");
 const firstNameError = document.querySelector("#firstNameError");
 const email = document.querySelector("#email");
@@ -46,6 +46,7 @@ function validateForm(event) {
         (checkLength(message.value, 24))) {
         contactForm.innerHTML +=
             `<div class="message-sent"><h3>Your message has been sent!</h3></div>`
+            console.log("Form was successfully sent.")
     }
 }
 

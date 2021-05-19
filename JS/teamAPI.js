@@ -21,8 +21,8 @@ async function getTeam() {
             }
 
             teamContainer.innerHTML +=
-                `<div class="team-card">
-                <img src="${imageContainer}" alt="${nameContainer}" class="team-image"/>
+                `<div class="team__card">
+                <img src="${imageContainer}" alt="${nameContainer}" class="team__image"/>
 			    <h3 class="name">${nameContainer}</h3>
                 </div>
 		        </div>`;

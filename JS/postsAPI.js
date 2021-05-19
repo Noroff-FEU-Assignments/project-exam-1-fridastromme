@@ -5,7 +5,7 @@ const postContainer = document.querySelector(".post");
 
 let perPage = 9;
 
-const loadMore = document.querySelector(".load-more");
+const loadMore = document.querySelector(".loadmore");
 
 async function getPosts() {
 

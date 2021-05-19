@@ -1,5 +1,5 @@
 const carouselUrl = "https://mageknip.no/wp-json/wp/v2/";
-const carouselContainer = document.querySelector(".carousel-container");
+const carouselContainer = document.querySelector(".carousel__container");
 
 let perPage = 1;
 let offset = 0;

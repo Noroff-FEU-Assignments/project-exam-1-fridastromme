@@ -12,12 +12,14 @@ async function openModal() {
         console.log(details);
 
         const featuredImage = details._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
+        const title = details.title.rendered;
 
 
 
 storyImage.onclick = function(){
     modal.style.display = "inline-block";
     modalImage.src = featuredImage;
+    modalImage.alt = title;
 
 }
 

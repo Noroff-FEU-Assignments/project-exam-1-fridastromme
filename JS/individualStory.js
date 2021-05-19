@@ -23,7 +23,7 @@ async function fetchStory() {
         console.log(details);
 
         const featuredImage = details._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-        const title = details.title
+        const title = details.title.rendered;
         const storyContent = details.content.rendered;
 
         headTitle.innerHTML = "ByWay | " + `${details.title.rendered}`;
@@ -32,7 +32,7 @@ async function fetchStory() {
         `<img src="${featuredImage}" alt="${title}"/>`;
         
         storyContainer.innerHTML =
-                `<div class="story-content">
+                `<div class="story__content">
                 <h1 class="story__title">${details.title.rendered}</h1>
                 <p>${storyContent}</p>
                 </div>`;
