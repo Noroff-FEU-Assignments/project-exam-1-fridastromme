@@ -20,7 +20,6 @@ storyImage.onclick = function(){
     modal.style.display = "inline-block";
     modalImage.src = featuredImage;
     modalImage.alt = title;
-
 }
 
 
