@@ -34,7 +34,6 @@ async function fetchStory() {
         storyContainer.innerHTML =
                 `<div class="story-content">
                 <h1 class="story__title">${details.title.rendered}</h1>
-                <h2>${details.modified}</h2>
                 <p>${storyContent}</p>
                 </div>`;
 
