@@ -96,7 +96,7 @@ a {
 }
 
 a:hover {
-	color: #e05200;
+	color: #a32c00;
 	font-weight: bold;
 }
 
@@ -116,6 +116,15 @@ nav {
 nav li {
 	display: inline-block;
 	margin: 1.5rem;
+}
+
+.active {
+	font-family: 'montserrat bold', Verdana, Geneva, Tahoma, sans-serif;
+	color: #a32c00;
+}
+
+.active__footer {
+	font-family: 'montserrat bold', Verdana, Geneva, Tahoma, sans-serif;
 }
 
 footer {
@@ -213,6 +222,10 @@ footer {
 	font-size: 3.5rem;
 }
 
+.intro {
+	max-width: 650px;
+}
+
 .intro h2 {
 	font-family: 'montserrat regular', Verdana, Geneva, Tahoma, sans-serif;
 	font-size: 1.5rem;
@@ -305,6 +318,10 @@ footer {
 	background-color: #264e54;
 }
 
+.active__stories {
+	font-family: 'montserrat bold', Verdana, Geneva, Tahoma, sans-serif;
+}
+
 #body__stories .footer__p {
 	color: #fff;
 	border-bottom: solid 1px #fff;
@@ -338,12 +355,15 @@ footer {
 .team {
 	width: 60%;
 	margin: auto;
+	max-width: 650px;
 }
 
 .post {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-gap: 1rem;
+	max-width: 1400px;
+	margin: auto;
 }
 
 .post__card {
@@ -418,13 +438,16 @@ footer {
 	width: 50%;
 	margin-top: 2rem;
 	margin-bottom: 6rem;
+	max-width: 650px;
 }
 
 .story__content h4 {
 	background-image: url('/images/quote-mark.png');
 	background-repeat: no-repeat;
 	background-size: 3%;
-	padding-left: 3rem;
+	padding-left: 2rem;
+	margin-left: 3rem;
+	margin-right: 3rem;
 }
 
 .story__content img {
@@ -519,6 +542,7 @@ footer {
 
 .contactform {
 	width: 40%;
+	max-width: 650px;
 	margin: auto;
 	padding-bottom: 4rem;
 }
@@ -553,7 +577,7 @@ textarea {
 }
 
 #message {
-	width: 40%;
+	width: 91%;
 	height: 6rem;
 }
 
@@ -564,6 +588,8 @@ textarea {
 	padding: 0.9rem 1.2rem 1rem 1.2rem;
 	border: none;
 	margin-top: 2rem;
+	float: right;
+	margin-right: 3rem;
 }
 
 #submit:hover {
