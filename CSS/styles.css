@@ -270,6 +270,10 @@ footer {
 	object-fit: cover;
 }
 
+.carousel__image:hover {
+	filter: brightness(0.85);
+}
+
 .carousel__title {
 	font-family: 'chivo', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
 		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
