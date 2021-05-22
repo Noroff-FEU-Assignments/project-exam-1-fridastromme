@@ -33,10 +33,10 @@ async function fetchStory() {
         headTitle.innerHTML = "ByWay | " + `${title}`;
 
         storyImage.innerHTML =
-        `<img src="${featuredImage}" alt="${title}"/>`;
-        
+            `<img src="${featuredImage}" alt="${title}"/>`;
+
         storyContainer.innerHTML =
-                `<div class="story__content">
+            `<div class="story__content">
                 <h1 class="story__title">${details.title.rendered}</h1>
                 <p>${storyContent}</p>
                 </div>`;
@@ -50,6 +50,4 @@ async function fetchStory() {
 }
 
 fetchStory();
-
-
 

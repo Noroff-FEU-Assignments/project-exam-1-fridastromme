@@ -46,7 +46,7 @@ function validateForm(event) {
         (checkLength(message.value, 24))) {
         contactForm.innerHTML +=
             `<div class="message-sent"><h3>Your message has been sent!</h3></div>`
-            console.log("Form was successfully sent.")
+        console.log("Form was successfully sent.")
     }
 }
 

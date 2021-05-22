@@ -1,11 +1,10 @@
 const carouselUrl = "https://mageknip.no/wp-json/wp/v2/";
 const carouselContainer = document.querySelector(".carousel__container");
+const buttonPrevious = document.querySelector("#prev");
+const buttonNext = document.querySelector("#next");
 
 let perPage = 1;
 let offset = 0;
-
-const buttonPrevious = document.querySelector("#prev");
-const buttonNext = document.querySelector("#next");
 
 async function fetchApi(url) {
 
@@ -15,12 +14,12 @@ async function fetchApi(url) {
 
         console.log(carouselData.length);
 
-                function showHTML() {
+        function showHTML() {
 
-                const imageTitle = carouselData[0].title.rendered;
-                const carouselImage = carouselData[0]._embedded["wp:featuredmedia"][0].source_url;
-        
-                carouselContainer.innerHTML +=
+            const imageTitle = carouselData[0].title.rendered;
+            const carouselImage = carouselData[0]._embedded["wp:featuredmedia"][0].source_url;
+
+            carouselContainer.innerHTML +=
                 `<div class="carousel__slider">
                 <a href="story.html?id=${carouselData[0].id}" class="carousel__slider">
                 <div class="carousel__title">
@@ -30,9 +29,9 @@ async function fetchApi(url) {
                 </a>
                 </div>`;
 
-                }
+        }
 
-                showHTML();
+        showHTML();
 
         if (offset === 0) {
             buttonPrevious.style.display = "none";

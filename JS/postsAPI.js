@@ -1,11 +1,9 @@
-// Get stories from Wordpress:
 const postUrl = "https://mageknip.no/wp-json/wp/v2/";
 
 const postContainer = document.querySelector(".post");
+const loadMore = document.querySelector(".loadmore");
 
 let perPage = 9;
-
-const loadMore = document.querySelector(".loadmore");
 
 async function getPosts() {
 
@@ -32,7 +30,7 @@ async function getPosts() {
                 </a>`;
         }
 
-        
+
         loadMore.addEventListener("click", () => {
             perPage += 9;
             getPosts(postUrl);

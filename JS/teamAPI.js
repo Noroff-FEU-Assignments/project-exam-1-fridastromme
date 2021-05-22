@@ -16,7 +16,7 @@ async function getTeam() {
 
             const imageContainer = data[i].images[0].src;
 
-            if ((window.location.pathname === '/viewer-profile.html') || (window.location.pathname === '/producer-profile.html')  && (i === 3)) {
+            if ((window.location.pathname === '/viewer-profile.html') || (window.location.pathname === '/producer-profile.html') && (i === 3)) {
                 break;
             }
 
