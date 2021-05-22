@@ -385,6 +385,7 @@ footer {
 	height: 100px;
 	margin: auto;
 	animation: spin 1.2s linear infinite;
+	margin: 3rem auto;
 }
 
 @keyframes spin {
