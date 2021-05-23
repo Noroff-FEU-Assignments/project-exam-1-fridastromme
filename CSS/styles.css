@@ -1,51 +1,51 @@
 @font-face {
 	font-family: 'chivo lightitalic';
-	src: url('/fonts/Chivo-LightItalic.woff') format('woff');
+	src: url('../fonts/Chivo-LightItalic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'chivo light';
-	src: url('/fonts/Chivo-Light.woff') format('woff');
+	src: url('../fonts/Chivo-Light.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'chivo regular';
-	src: url('/fonts/Chivo-Regular.woff') format('woff');
+	src: url('../fonts/Chivo-Regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'chivo bold';
-	src: url('/fonts/Chivo-Bold.woff') format('woff');
+	src: url('../fonts/Chivo-Bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'montserrat regular';
-	src: url('/fonts/Montserrat-Regular.woff') format('woff');
+	src: url('../fonts/Montserrat-Regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'montserrat italic';
-	src: url('/fonts/Montserrat-Italic.woff') format('woff');
+	src: url('../fonts/Montserrat-Italic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'montserrat bold';
-	src: url('/fonts/Montserrat-Bold.woff') format('woff');
+	src: url('../fonts/Montserrat-Bold.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'montserrat bolditalic';
-	src: url('/fonts/Montserrat-BoldItalic.woff') format('woff');
+	src: url('../fonts/Montserrat-BoldItalic.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'montserrat medium';
-	src: url('/fonts/Montserrat-Medium.woff') format('woff');
+	src: url('../fonts/Montserrat-Medium.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'montserrat mediumitalic';
-	src: url('/fonts/Montserrat-MediumItalic.woff') format('woff');
+	src: url('../fonts/Montserrat-MediumItalic.woff') format('woff');
 }
 
 /* GLOBAL STYLES */
@@ -364,6 +364,11 @@ footer {
 	max-width: 650px;
 }
 
+.post__container {
+	max-width: 1400px;
+	margin: auto;
+}
+
 .post {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -384,8 +389,8 @@ footer {
 	width: 100px;
 	height: 100px;
 	margin: auto;
+	margin-bottom: 2rem;
 	animation: spin 1.2s linear infinite;
-	margin: 3rem auto;
 }
 
 @keyframes spin {
@@ -646,7 +651,7 @@ textarea {
 	}
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 760px) {
 	/* GLOBAL */
 
 	header {
@@ -663,7 +668,7 @@ textarea {
 
 	#hamburger {
 		display: block;
-		width: 100%;
+		max-width: 60px;
 	}
 
 	.header__nav {
