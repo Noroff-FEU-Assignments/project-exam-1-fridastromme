@@ -634,6 +634,7 @@ textarea {
 	.frontpage {
 		grid-template-columns: 1fr;
 		grid-template-areas: 'intro' 'carousel__section';
+		padding: 0rem 2rem 4rem 2rem;
 	}
 
 	.h1__frontpage {
